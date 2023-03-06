@@ -1,3 +1,5 @@
+import { Provider } from "react-redux"
+import { store } from './redux/store'
 import {createRoot} from 'react-dom/client'
 // Axios
 import axios from 'axios'
@@ -44,7 +46,9 @@ if (container) {
       <MetronicI18nProvider>
         <ThemeModeProvider>
           <AuthProvider>
-            <AppRoutes />
+            <Provider store={store}>
+              <AppRoutes />
+            </Provider>
           </AuthProvider>
         </ThemeModeProvider>
       </MetronicI18nProvider>
